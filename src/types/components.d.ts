@@ -9,7 +9,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     Greet: typeof import('./../components/Greet.vue')['default']
+    IconEpApple: typeof import('~icons/ep/apple')['default']
+    IconEpKey: typeof import('~icons/ep/key')['default']
     'IconIc:sharpAddCircleOutline': typeof import('~icons/ic/sharp-add-circle-outline')['default']
     'IconIc:sharpRemoveCircleOutline': typeof import('~icons/ic/sharp-remove-circle-outline')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

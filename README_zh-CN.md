@@ -1,4 +1,4 @@
-<h1 align="center">tauri-vue-template</h1>
+<h1 align="center">tauri-fish-manager</h1>
 
 [English](README.md) | 简体中文
 
@@ -22,7 +22,7 @@
 
 ```shell
 // 克隆本项目
-git clone https://github.com/jianxingxuejian/tauri-vue-template
+git clone https://github.com/jianxingxuejian/tauri-fish-manager
 // 安装依赖
 pnpm i
 // Tauri开发模式
@@ -52,4 +52,4 @@ git push origin vX.Y.Z
 
 ## 许可
 
-本项目使用 [MIT](https://github.com/jianxingxuejian/tauri-vue-template/blob/main/LICENSE) 许可证书。
+本项目使用 [MIT](https://github.com/jianxingxuejian/tauri-fish-manager/blob/main/LICENSE) 许可证书。

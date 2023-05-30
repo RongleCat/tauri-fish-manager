@@ -1,10 +1,13 @@
 <template>
   <div class="h-screen w-screen flex-col">
-    <layout-header class="h-5vh" />
-    <layout-main class="h-95vh" />
+    <router-view v-slot="{ Component, route }">
+      <transition name="fade-slide" mode="out-in" appear>
+        <keep-alive>
+          <suspense>
+            <component :is="Component" :key="route.fullPath" />
+          </suspense>
+        </keep-alive>
+      </transition>
+    </router-view>
   </div>
 </template>
-
-<script setup lang="ts">
-  import { LayoutMain, LayoutHeader } from './components'
-</script>

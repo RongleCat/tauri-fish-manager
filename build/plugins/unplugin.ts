@@ -4,6 +4,8 @@ import Components from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 export default [
   Icons({
     autoInstall: true,
@@ -26,8 +28,10 @@ export default [
     resolvers: [
       IconsResolver({
         customCollections: ['custom'],
+        enabledCollections: ['ep'],
         prefix: 'icon',
       }),
+      ElementPlusResolver(),
     ],
   }),
   AutoImport({
@@ -38,5 +42,14 @@ export default [
       enabled: true,
       filepath: './.eslintrc-auto-import.json',
     },
+    resolvers: [
+      ElementPlusResolver(),
+
+      // Auto import icon components
+      // 自动导入图标组件
+      IconsResolver({
+        prefix: 'Icon',
+      }),
+    ],
   }),
 ]

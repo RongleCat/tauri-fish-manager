@@ -1,4 +1,4 @@
-<h1 align="center">tauri-vue-template</h1>
+<h1 align="center">tauri-fish-manager</h1>
 
 English | [简体中文](README_zh-CN.md)
 
@@ -22,7 +22,7 @@ This is a Tauri+Vue project template that I frequently use, built with [Vue3](ht
 
 ```shell
 // Clone the repository
-git clone https://github.com/jianxingxuejian/tauri-vue-template
+git clone https://github.com/jianxingxuejian/tauri-fish-manager
 // Install dependencies
 pnpm i
 // Tauri development mode
@@ -52,4 +52,4 @@ Contributes are welcome to help improve this project.
 
 ## License
 
-This project is licensed under the [MIT](https://github.com/jianxingxuejian/tauri-vue-template/blob/main/LICENSE) license.
+This project is licensed under the [MIT](https://github.com/jianxingxuejian/tauri-fish-manager/blob/main/LICENSE) license.

@@ -7,4 +7,4 @@ export function setupStore(app: App) {
   app.use(store)
 }
 
-export * from './counter'
+export * from './keys'
