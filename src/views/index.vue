@@ -167,7 +167,6 @@
   import { useRouter } from 'vue-router'
   import IconEpKey from '~icons/ep/key'
   import type { ElTable } from 'element-plus'
-  import { ElMessageBox } from 'element-plus'
   import IconEpSearch from '~icons/ep/search'
   import { useKeysStore, useProductsStore } from '@/stores'
   import { parse, stringify } from 'qs'
@@ -176,7 +175,7 @@
   import type { PageInfo, QueryParams, DYProductInfo, ProductInfo, PublishErrorItem } from '@/types'
   import CandidateItem from '@/components/candidate-item.vue'
   import { batchBuildProduct } from '@/utils/upload'
-  import { fetchAllProducts, publishProducts } from '@/api/publish'
+  import { publishProducts } from '@/api/publish'
 
   const keysStore = useKeysStore()
   const productsStore = useProductsStore()
@@ -238,11 +237,11 @@
     allParams.size = +parsedParams.size
   }
 
-  const testAPI = async () => {
-    const res = await fetchAllProducts()
+  // const testAPI = async () => {
+  //   const res = await fetchAllProducts()
 
-    ElMessageBox.alert(JSON.stringify(res))
-  }
+  //   ElMessageBox.alert(JSON.stringify(res))
+  // }
 
   const queryList = async () => {
     try {
