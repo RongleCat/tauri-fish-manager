@@ -5,7 +5,7 @@
 <script lang="ts" setup>
   import { useKeysStore } from '@/stores'
   const keyStore = useKeysStore()
-  keyStore.readKeyList()
+  keyStore.readKeys()
 </script>
 
 <style lang="scss">

@@ -1,6 +1,6 @@
 import { readTextFile, writeFile, createDir, BaseDirectory, exists } from '@tauri-apps/api/fs'
 import { configFile, isDev } from '@/config'
-import { KeysConfig } from '@/types/common'
+// import { KeyConfig } from '@/types/common'
 
 const configBase = isDev ? BaseDirectory.Desktop : BaseDirectory.AppConfig
 
@@ -28,15 +28,12 @@ export async function getConfig<T>(configPath = configFile.keys): Promise<T> {
  * @description: 写入配置文件
  * @return {*}
  */
-export async function writeConfig<T>({
-  // configPath = configFile.keys,
-  configObject,
-}: {
-  configPath?: string
-  configObject: T
-}): Promise<void> {
+export async function writeConfig<T>(
+  configObject: T,
+  configPath: string = configFile.keys
+): Promise<void> {
   await writeFile(
-    { contents: JSON.stringify(configObject, null, 2), path: 'config/keys.json' },
+    { contents: JSON.stringify(configObject, null, 2), path: `config/${configPath}.json` },
     {
       dir: configBase,
     }
@@ -44,23 +41,37 @@ export async function writeConfig<T>({
   return Promise.resolve()
 }
 
-export async function createDataFolder(pathName: string, dir: BaseDirectory = configBase) {
+/**
+ * @description: 创建文件夹
+ * @param {string} pathName
+ * @param {BaseDirectory} dir
+ * @return {*}
+ */
+export async function createDataFolder(
+  pathName: string,
+  dir: BaseDirectory = configBase
+): Promise<void> {
   return await createDir(pathName, {
     dir,
     recursive: true,
   })
 }
 
-export async function fileSystemInit() {
+/**
+ * @description: 文件系统初始化
+ * @return {*}
+ */
+export async function fileSystemInit(): Promise<void> {
   const flag = await exists('config/', { dir: configBase })
 
   if (!flag) {
     await createDataFolder('config')
   }
 
-  if (isDev) {
-    await writeConfig<KeysConfig>({
-      configObject: { keys: [{ id: '111', secret: '222', name: '333' }], useIndex: 0 },
-    })
-  }
+  // if (isDev) {
+  //   await writeConfig<KeyConfig>({
+  //     keys: [{ id: '111', secret: '222', name: '333' }],
+  //     useIndex: 0,
+  //   })
+  // }
 }

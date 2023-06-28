@@ -8,3 +8,4 @@ export function setupStore(app: App) {
 }
 
 export * from './keys'
+export * from './products'
