@@ -17,7 +17,7 @@ jobs:
       RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # 查询版本号（tag）
       - name: Query version number
         id: get_version
@@ -29,7 +29,7 @@ jobs:
       # 根据查询到的版本号创建 release
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -47,11 +47,11 @@ jobs:
 
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # 安装 Node.js
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16
 
