@@ -6,4 +6,4 @@ export const configFile = {
   keys: `keys`,
 }
 
-export const isDev = env === 'develop'
+export const isDev = env !== 'production'
