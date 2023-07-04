@@ -58,5 +58,5 @@ function transformIcon(
     return () => h(Icon, { icon, style })
   }
 
-  return () => h(Icon, { icon, style })
+  return () => h(Icon as any, { icon, style })
 }
